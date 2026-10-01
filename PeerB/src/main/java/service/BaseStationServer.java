@@ -77,12 +77,7 @@ public class BaseStationServer {
         // TODO Paso 2.3: Convertir la respuesta a bytes (UTF-8) y construir el DatagramPacket de respuesta
 //         dirigido al remitente (packet.getAddress() y packet.getPort()).
         byte[] responseBytes = response.getBytes(StandardCharsets.UTF_8);
-        DatagramPacket responsePacket = new DatagramPacket(
-                responseBytes,
-                responseBytes.length,
-                packet.getAddress(),
-                packet.getPort()
-        );
+        DatagramPacket responsePacket = new DatagramPacket(responseBytes, responseBytes.length, packet.getAddress(), packet.getPort());
 
         // TODO Paso 2.4: Enviar el paquete de respuesta a través del socket usando socket.send(...).
         socket.send(responsePacket);
